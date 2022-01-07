@@ -22,10 +22,6 @@ jobs:
         uses: actions/checkout@master
 
       # Runs a single command using the runners shell
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@main
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
-          BUILD_SCRIPT: npm install && npm run build:h5
+      - name: Run build.sh
+        run: sh ./build.sh
+
